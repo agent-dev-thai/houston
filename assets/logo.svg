@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Houston developer tool logo</title>
+  <desc id="desc">A dark minimal mission-control badge logo with an orbit node and the word Houston.</desc>
+  <rect width="1024" height="1024" fill="#0B0D10"/>
+
+  <g transform="translate(0 -10)">
+    <!-- outer + accent rings -->
+    <circle cx="512" cy="372" r="240" fill="none" stroke="#F5F5F7" stroke-width="3" opacity="0.16"/>
+    <circle cx="512" cy="372" r="212" fill="none" stroke="#7CFF58" stroke-width="2" opacity="0.50"/>
+
+    <!-- crosshair brackets -->
+    <g opacity="0.42" stroke="#F5F5F7" stroke-width="2.5" stroke-linecap="round">
+      <path d="M512 118v28"/>
+      <path d="M512 598v28"/>
+      <path d="M256 372h28"/>
+      <path d="M740 372h28"/>
+    </g>
+
+    <!-- dotted predicted path -->
+    <path d="M360 458 C420 320 600 256 700 332"
+          fill="none" stroke="#F5F5F7" stroke-width="4"
+          stroke-linecap="round" stroke-dasharray="1 18" opacity="0.30"/>
+
+    <!-- orbit ellipse -->
+    <ellipse cx="512" cy="372" rx="156" ry="60" fill="none"
+             stroke="#F5F5F7" stroke-width="8" opacity="0.85"
+             transform="rotate(-22 512 372)"/>
+
+    <!-- green flown arc -->
+    <path d="M376 438 C436 372 520 322 648 314"
+          fill="none" stroke="#7CFF58" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- origin marker -->
+    <circle cx="378" cy="438" r="9" fill="#F5F5F7"/>
+    <circle cx="378" cy="438" r="4" fill="#0B0D10"/>
+
+    <!-- tracked node / satellite at arc head -->
+    <g transform="translate(648 314) rotate(-22)">
+      <circle cx="0" cy="0" r="20" fill="#7CFF58"/>
+      <circle cx="0" cy="0" r="7" fill="#0B0D10"/>
+      <path d="M28 0h26" stroke="#7CFF58" stroke-width="8" stroke-linecap="round"/>
+      <path d="M48 -14v28" stroke="#7CFF58" stroke-width="8" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- wordmark -->
+  <text x="512" y="792" text-anchor="middle"
+        fill="#F5F5F7"
+        font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif"
+        font-size="100" font-weight="bold"
+        letter-spacing="16">HOUSTON</text>
+
+  <!-- tagline -->
+  <text x="512" y="848" text-anchor="middle"
+        fill="#F5F5F7" opacity="0.42"
+        font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif"
+        font-size="25" font-weight="normal"
+        letter-spacing="4">mission control for codex</text>
+</svg>
