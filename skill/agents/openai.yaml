@@ -1,0 +1,7 @@
+interface:
+  display_name: "Factory Mission Runner"
+  short_description: "Run Factory missions with portable workflows."
+  default_prompt: "Use $factory-mission-runner to resume the mission for this repo, reconcile Factory state with code, and run the next validated slice."
+
+policy:
+  allow_implicit_invocation: true
