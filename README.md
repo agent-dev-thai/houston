@@ -4,7 +4,7 @@
   <img src="assets/logo-insignia.png" alt="Houston — mission control for Codex" width="320">
 </p>
 
-> Mission control for Codex. Durable, harness-agnostic mission mode — bootlegged.
+> Mission control for Codex. Durable, harness-agnostic, opinionated mission mode.
 
 Codex `goal` mode is good at the *verify* half of a loop: set a target, run until it goes green. But the goal lives and dies inside one session. Close the terminal and the mission is gone — no record of what it was meant to do, how far it got, or what's left.
 
