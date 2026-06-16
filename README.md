@@ -1,7 +1,7 @@
 # houston
 
 <p align="center">
-  <img src="assets/logo.png" alt="Houston — mission control for Codex" width="320">
+  <img src="assets/logo-foundation.png" alt="Houston — mission control for Codex" width="320">
 </p>
 
 > Mission control for Codex. Durable, harness-agnostic mission mode — bootlegged.
