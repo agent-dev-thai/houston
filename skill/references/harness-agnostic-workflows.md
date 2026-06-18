@@ -10,6 +10,8 @@ A workflow is portable when it declares:
 - `source_of_truth`: files or systems to read before acting.
 - `phase_graph`: ordered or parallel phases and barrier points.
 - `roles`: implementer, reviewer, redteam, validator, integrator.
+- `lanes`: semantic work lanes that can run in parallel or sequentially.
+- `ownership`: allowed and forbidden write paths/actions for each lane.
 - `artifacts`: expected files, test outputs, verdicts, and handoffs.
 - `validation`: commands or checks that prove completion.
 - `integration_owner`: who is allowed to touch real source files.
@@ -20,8 +22,8 @@ A workflow is portable when it declares:
 ### Codex
 
 - Use native tools and `update_plan` for the live spine.
-- Use `multi_agent_v1.spawn_agent` only after the user explicitly authorizes subagents/fanout.
-- If the user has explicitly asked for subagents/fanout, spawn at least one subagent for an independent implementation, review, test, or reconciliation slice unless the task is already complete or spawning is unavailable.
+- Use the available subagent/delegation primitive only after the user explicitly authorizes subagents/fanout.
+- If fanout is authorized, delegate at least one independent implementation, review, test, or reconciliation lane unless the task is already complete, tightly coupled, unsafe to split, or spawning is unavailable.
 - Give workers disjoint ownership when editing.
 - Main agent integrates and validates.
 
@@ -51,7 +53,7 @@ Use when a spec has multiple plausible valid algorithms or implementation strate
 
 1. **Implement:** produce N candidates, each in its own file or isolated write set.
 2. **Barrier:** wait for every candidate artifact.
-3. **Redteam:** independently re-read source conventions, write clean-room references/tests, run every candidate, and identify the survivor.
-4. **Integrate:** main agent ports the survivor and useful tests into the repo.
+3. **Redteam:** independently re-read source conventions, write clean-room references/tests when useful, run or inspect every candidate, and recommend a survivor with evidence.
+4. **Integrate:** main agent chooses, ports the survivor and useful tests into the repo, and reruns validation.
 
 Do not use this pattern for ordinary CRUD changes, one-obvious-fix bugs, or tightly coupled edits.

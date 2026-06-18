@@ -18,7 +18,7 @@ Factory ships mission mode (durable `mission.md` / `features.json` / `validation
 - **Import** a legacy `.factory` mission (mirror the spine, record the source).
 - **Run / resume** a mission with a portable dynamic loop: `warm start → classify → inspect → plan → execute → validate → repair → handoff`.
 - **Reconcile** mission metadata against real git/source/test truth — never trust stale state.
-- **Fan out** subagents (implement → red-team → verify) when you ask for it.
+- **Fan out** subagents by semantic lane (scout, implementation, validator, reviewer/redteam) when you ask for it.
 - **Gate** completion on a named validation contract, not a vibe.
 
 The loop is harness-agnostic by design: the same shape runs on Codex tools, Claude Workflow JS, Factory workers, or a plain sequential fallback.
@@ -48,6 +48,12 @@ skill/scripts/create_mission.py --cwd "$PWD" \
   --title "Kelly Criterion" \
   --objective "Add Kelly position sizing with a /kelly command, helper, docs, tests"
 
+# create a temporary mission for smoke tests or evaluations
+skill/scripts/create_mission.py --cwd "$PWD" \
+  --title "Smoke Test" \
+  --objective "Verify mission spine generation" \
+  --missions-root /tmp/houston-smoke
+
 # find the active mission for this repo
 skill/scripts/find_mission.py --cwd "$PWD" --latest
 
@@ -58,7 +64,7 @@ skill/scripts/import_factory_mission.py ~/.factory/missions/<id>
 skill/scripts/summarize_mission.py ~/.codex/missions/<mission>
 ```
 
-Then, inside Codex, point it at the mission and let the dynamic loop run. Ask for subagents/fanout explicitly to authorize parallel workers.
+Then, inside Codex, point it at the mission and let the dynamic loop run. Ask for subagents/fanout explicitly to authorize parallel workers. Houston will split work into safe lanes with explicit ownership and barriers; if spawning is unavailable or unsafe, it runs the same lane graph sequentially.
 
 ## Receipt
 

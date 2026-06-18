@@ -19,11 +19,13 @@ This is the harness-agnostic workflow shape inspired by Claude Code dynamic work
 4. **Plan spine**
    - Maintain a short live task list.
    - Keep exactly one active item.
+   - For fanout, convert the plan into semantic lanes with disjoint write ownership and explicit barrier points.
    - Revise the list when validation or repo facts change the path.
 
 5. **Execute**
    - Implement the smallest coherent slice.
    - Keep ownership boundaries clear.
+   - When using subagents, keep the main agent as integrator and final validator.
    - Avoid unrelated refactors.
 
 6. **Validate**

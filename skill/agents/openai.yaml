@@ -1,7 +1,7 @@
 interface:
-  display_name: "Factory Mission Runner"
-  short_description: "Run Factory missions with portable workflows."
-  default_prompt: "Use $factory-mission-runner to resume the mission for this repo, reconcile Factory state with code, and run the next validated slice."
+  display_name: "Houston"
+  short_description: "Run mission-mode coding with fanout."
+  default_prompt: "Use $houston to create or resume a mission, delegate safe lanes with subagents when useful, validate, and write the handoff."
 
 policy:
   allow_implicit_invocation: true

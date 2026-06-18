@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Print a compact summary of a Factory mission directory."""
+"""Print a compact summary of a Codex mission directory."""
 
 from __future__ import annotations
 
